@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#240d1b">
+<title>حكايتنا | Mina & Refka ❤️</title>
+<style>
+:root{--bg:#160811;--pink:#ff91b9;--pale:#ffe1ec;--card:#321528;--text:#fff5f8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#57203d,#220d1a 52%,#10070c);color:var(--text);font-family:Tahoma,Arial,sans-serif;min-height:100vh}button,input{font:inherit}a{color:var(--pale);text-decoration:none}.wrap{width:min(920px,92%);margin:auto}header{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:22px 0}.brand{font-weight:bold;color:var(--pale)}nav{display:flex;gap:15px;flex-wrap:wrap;font-size:.9rem}
+.hero{text-align:center;padding:70px 0 55px}.eyebrow{color:#ffb9d1}h1{font-size:clamp(2.4rem,8vw,5rem);line-height:1.2;margin:16px 0}.gradient{background:linear-gradient(90deg,#fff0f6,#ff86b4,#ffe0ec);color:transparent;background-clip:text;-webkit-background-clip:text}.intro{max-width:650px;line-height:2;color:#f4d9e4;margin:0 auto 24px}.btn{border:0;border-radius:999px;padding:13px 22px;margin:5px;cursor:pointer;font-weight:bold}.primary{background:linear-gradient(135deg,#ffd6e4,#ff87b5);color:#381426}.secondary{background:#ffffff0d;color:#ffe1ec;border:1px solid #ffb7d055}.section{padding:28px 0 52px}.section h2{text-align:center;font-size:clamp(1.5rem,5vw,2.2rem);margin:0 0 12px}.sub{text-align:center;color:#e5bdcd;line-height:1.9;margin:0 auto 25px}.card{background:linear-gradient(145deg,#ffffff0d,#ffffff05);border:1px solid #ffc1d525;border-radius:22px;padding:24px;box-shadow:0 18px 60px #0002}.letter{max-width:700px;margin:auto;line-height:2.2;color:#ffe8f0}.letter strong{color:#ff9fc1}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.photo{min-height:205px;border-radius:18px;border:1px dashed #ff9fc166;background:#ffffff08;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:#efbfd0;overflow:hidden;position:relative}.photo img{width:100%;height:100%;min-height:205px;object-fit:cover;position:absolute;inset:0}.photo span{position:relative;z-index:1;text-shadow:0 2px 10px #000}.count{text-align:center;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px 0}.unit{min-width:88px;padding:15px 10px;background:#ffffff0c;border:1px solid #ffb5d32b;border-radius:16px}.num{display:block;font-size:1.9rem;color:#ff9fc1;font-weight:bold}.label{font-size:.85rem;color:#eac4d3}.date-input{display:block;margin:15px auto 0;padding:10px;border-radius:10px;background:#1b0c15;color:#fff;border:1px solid #ffb5d366}.secret{display:none;margin-top:18px;animation:fade .5s}.secret.show{display:block}footer{text-align:center;padding:25px 0 35px;color:#cda6b7;font-size:.9rem}.heart{position:fixed;bottom:-30px;color:#ff86b4;opacity:.45;animation:float 10s linear infinite;pointer-events:none;z-index:0}@keyframes float{to{transform:translateY(-115vh) rotate(35deg)}}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+#site{display:none;position:relative;z-index:1}.gate{min-height:100vh;display:grid;place-items:center;padding:22px}.gate-card{width:min(440px,100%);text-align:center}.gate h1{font-size:2.5rem}.gate p{line-height:1.9;color:#f1d1df}.gate input{display:block;width:100%;padding:13px;border-radius:12px;border:1px solid #ffb5d366;background:#1b0c15;color:white;margin:16px 0;text-align:center}.error{color:#ff9ab8;min-height:24px;font-size:.9rem}.gate small{color:#cda6b7;line-height:1.7;display:block;margin-top:14px}
+@media(max-width:650px){header{align-items:flex-start;flex-direction:column}.hero{padding-top:48px}.gallery{grid-template-columns:1fr}.photo,.photo img{min-height:240px}}
+</style>
+</head>
+<body>
+<div id="gate" class="gate">
+  <div class="card gate-card">
+    <div style="font-size:2.5rem">🔐 ❤️</div>
+    <div class="eyebrow">مكان صغير لحكاية كبيرة</div>
+    <h1><span class="gradient">Mina & Refka</span></h1>
+    <p>المكان ده معمول مخصوص ليكم…<br>اكتب كلمة السر عشان تفتحوا حكايتكم 💌</p>
+    <form id="unlockForm">
+      <input id="password" type="password" placeholder="كلمة السر" autocomplete="current-password" required>
+      <button class="btn primary" type="submit" style="width:100%">افتح حكايتنا ❤️</button>
+    </form>
+    <div class="error" id="error" role="status"></div>
+    <small>مهم: قفل الصفحة بكلمة سر داخل HTML الثابتة مجرد حاجز بسيط، مش حماية حقيقية؛ كلمة السر ممكن تتكشف من ملفات الموقع. ما ترفعش صورًا أو رسائل حساسة على استضافة عامة.</small>
+  </div>
+</div>
+<div id="site">
+  <div style="position:relative;z-index:1">
+    <header class="wrap"><div class="brand">♥ حكايتنا — Mina & Refka</div><nav><a href="#letter">رسالة ليكي</a><a href="#memories">ذكرياتنا</a><a href="#counter">عدادنا</a></nav></header>
+    <main class="wrap">
+      <section class="hero"><div class="eyebrow">لأجمل صدفة في حياتي ✨</div><h1>Refka، إنتي <span class="gradient">حكايتي الحلوة</span></h1><p class="intro">من يوم 25 مايو 2026، بقت عندي حكاية اسمها إحنا… وكل يوم معاكي صفحة جديدة أتمنى تفضل مليانة حب وضحك وذكريات ❤️</p><a class="btn primary" href="#letter">افتحي رسالتك 💌</a><button class="btn secondary" id="musicBtn" type="button">♪ تشغيل موسيقى</button><audio id="music" loop></audio><p style="font-size:.8rem;color:#d6aabc;margin-top:12px">لإضافة أغنيتكم، ضيف ملف باسم love-song.mp3 بجوار index.html.</p></section>
+      <section class="section" id="letter"><h2>رسالة من Mina لـ Refka 💌</h2><p class="sub">كلام صغير من قلب كبير…</p><div class="card letter"><p>يا Refka، <strong>إنتي مش مجرد شخص بحبه</strong>، إنتي راحتي وضحكتي وأحلى جزء في يومي.</p><p>من يوم 25 مايو 2026 بدأت حكاية غالية عليّا. يمكن مش كل يوم بعرف أقولك قد إيه إنتي مهمة عندي، بس وجودك فارق معايا، وكل لحظة حلوة معاكي بتتحفظ جوايا كأنها صورة مش عايزها تنتهي.</p><p>نفسي نفضل نعمل ذكريات كتير، نضحك على حاجات صغيرة، ونفضل سند لبعض مهما الأيام اتغيرت.</p><p><strong>بحبك يا Refka، وكل يوم معاكي بداية لحكاية أحلى. ❤️</strong></p><p style="text-align:left;color:#ffb5d0">— Mina ❤️</p></div></section>
+      <section class="section" id="memories"><h2>ذكرياتنا 📸</h2><p class="sub">بدّل المربعات دي بصوركم الحقيقية.</p><div class="gallery"><label class="photo"><span>صورتنا الأولى ❤️<br><small>اضغط لاختيار صورة</small></span><input type="file" accept="image/*" hidden></label><label class="photo"><span>أحلى ضحكة 🥹<br><small>اضغط لاختيار صورة</small></span><input type="file" accept="image/*" hidden></label><label class="photo"><span>ذكرى مش هننساها ✨<br><small>اضغط لاختيار صورة</small></span><input type="file" accept="image/*" hidden></label></div><p class="sub" style="font-size:.85rem;margin-top:12px">اختيار الصور هنا للمعاينة على جهازك فقط؛ لإضافتها للجميع لازم تضمّنها في ملفات الموقع قبل النشر.</p></section>
+      <section class="section" id="counter"><h2>من يوم ما حكايتنا بدأت ⏳</h2><p class="sub">من 25 مايو 2026، وكل يوم حكايتنا بتكبر ❤️</p><div class="card" style="text-align:center"><div class="count"><div class="unit"><span class="num" id="days">0</span><span class="label">يوم</span></div><div class="unit"><span class="num" id="hours">0</span><span class="label">ساعة</span></div><div class="unit"><span class="num" id="minutes">0</span><span class="label">دقيقة</span></div><div class="unit"><span class="num" id="seconds">0</span><span class="label">ثانية</span></div></div><p style="color:#e5bdcd" id="dateHint">من 25 مايو 2026 ❤️</p></div></section>
+      <section class="section" style="text-align:center"><h2>فيه مفاجأة ليكي 🎁</h2><p class="sub">اضغطي على الزر وشوفي.</p><button class="btn primary" id="surpriseBtn" type="button">افتحي المفاجأة 💗</button><div class="card secret" id="surprise"><h2>بحبك يا Refka ❤️</h2><p>ولو رجع بيا الزمن، هختار إني أعرفك من جديد… كل مرة.</p></div></section>
+    </main><footer class="wrap">اتعمل بكل الحب من Mina لـ Refka ❤️ — حكايتنا لسه في أولها</footer>
+  </div>
+</div>
+<script>
+/* غيّر كلمة السر من هنا قبل النشر. هذا القفل ليس حماية أمنية حقيقية على استضافة HTML عامة. */
+const SITE_PASSWORD = "Refka25";
+const gate = document.getElementById('gate');
+const site = document.getElementById('site');
+document.getElementById('unlockForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  if(document.getElementById('password').value === SITE_PASSWORD){
+    gate.style.display='none'; site.style.display='block'; document.getElementById('error').textContent='';
+    try { sessionStorage.setItem('hekayetnaUnlocked','yes'); } catch(e) {}
+  } else { document.getElementById('error').textContent='كلمة السر مش مظبوطة، جرّب تاني ❤️'; }
+});
+try { if(sessionStorage.getItem('hekayetnaUnlocked')==='yes'){gate.style.display='none';site.style.display='block';} } catch(e) {}
+const start = new Date('2026-05-25T00:00:00');
+function updateCounter(){let diff=Date.now()-start.getTime();if(diff<0)diff=0;let d=Math.floor(diff/86400000);diff%=86400000;let h=Math.floor(diff/3600000);diff%=3600000;let m=Math.floor(diff/60000);diff%=60000;let s=Math.floor(diff/1000);document.getElementById('days').textContent=d;document.getElementById('hours').textContent=h;document.getElementById('minutes').textContent=m;document.getElementById('seconds').textContent=s;}
+updateCounter();setInterval(updateCounter,1000);
+document.getElementById('surpriseBtn').addEventListener('click',()=>document.getElementById('surprise').classList.toggle('show'));
+document.querySelectorAll('.photo input').forEach(input=>input.addEventListener('change',()=>{const file=input.files&&input.files[0];if(!file)return;const url=URL.createObjectURL(file);const label=input.closest('.photo');let img=label.querySelector('img');if(!img){img=document.createElement('img');label.appendChild(img);}img.src=url;label.querySelector('span').style.display='none';}));
+const music=document.getElementById('music');music.src='love-song.mp3';
+document.getElementById('musicBtn').addEventListener('click',async()=>{const btn=document.getElementById('musicBtn');try{if(music.paused){await music.play();btn.textContent='Ⅱ إيقاف الموسيقى';}else{music.pause();btn.textContent='♪ تشغيل موسيقى';}}catch(e){alert('ضيف ملف أغنية باسم love-song.mp3 بجوار index.html وبعدها جرّب تاني.');}});
+for(let i=0;i<12;i++){const h=document.createElement('div');h.className='heart';h.textContent='♥';h.style.left=(Math.random()*100)+'%';h.style.animationDelay=(Math.random()*8)+'s';h.style.animationDuration=(7+Math.random()*7)+'s';h.style.fontSize=(12+Math.random()*18)+'px';document.body.appendChild(h);}
+</script>
+</body></html>
